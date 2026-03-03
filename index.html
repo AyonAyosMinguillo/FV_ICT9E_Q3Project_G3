@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FareRides tm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+  <a class="navbar-brand" href="#">FareRides©</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="mynavbar">
+    <ul class="navbar-nav me-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="maintab.html">Calculator</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="apat.html">About us</a>
+          <li class="nav-item">
+
+    </li>
+    </ul>
+  </div>
+  </div>
+</nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h4 class="mb-0">Fare Estimator</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="pickup" class="form-label">Pickup Location (KM)</label>
+                            <input type="number" class="form-control" id="pickup" value="0">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="dropoff" class="form-label">Drop-off Location (KM)</label>
+                            <input type="number" class="form-control" id="dropoff" value="0">
+                        </div>
+
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" type="checkbox" id="disc">
+                            <label class="form-check-label" for="disc">
+                                20% Discount (Senior/Student/PWD)
+                            </label>
+                        </div>
+
+                        <button onclick="calculateFare()" class="btn btn-success w-100 fw-bold">
+                            Compute Fare
+                        </button>
+                    </div>
+                    <div class="card-footer text-center bg-white py-3">
+                        <small class="text-muted d-block">Estimated Total:</small>
+                        <h2 class="text-dark" id="DisplayAns">Php 0.00</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- YOUR ORIGINAL SCRIPT UNALTERED ---
+        //compute for rate
+        function calculateFare() {
+        let pickup, dropoff, basefare, baseKM, perKMrate, distance, extraKM, discount;
+            pickup = parseFloat(document.getElementById("pickup").value);
+            dropoff = parseFloat(document.getElementById("dropoff").value);
+            basefare = 67;
+            perKMrate = 12;
+            baseKM = 3;
+            discount = document.getElementById("disc").checked;
+
+            distance = Math.max(Math.abs(dropoff - pickup), 0);
+
+            extraKM = Math.max(distance - baseKM, 0);
+
+        let fare = basefare + extraKM + perKMrate
+
+            fare = fare * (1 - 0.2 * discount);
+
+            document.getElementById(DisplayAns).innerHTML = "Php " + fare.toFixed(2);
+        }
+    </script>
+</body>
+</html>
