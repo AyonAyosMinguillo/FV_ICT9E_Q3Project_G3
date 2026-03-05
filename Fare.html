@@ -191,8 +191,8 @@ function calculateFare() {
 
     let distance = getDistance(line, pickup, dropoff);
 
-    let basefare = 20;
-    let perKMrate = 4;
+    let basefare = 40;
+    let perKMrate = 8;
     let baseKM = 3;
     let extraKM = Math.max(distance - baseKM, 0);
     let fare = basefare + (extraKM * perKMrate);
@@ -220,5 +220,6 @@ yes it is indeed from reddit, i just thought it looked nice and would fit the th
 Some remarks: i just used my skills test + whatever logan and kendrick left me to "beautify" so like yeah w group|
 also if you noticed, the logout button leads back to google cause nakakatamad gumawa ng login page especially cause may exam pa bukas
 -->
+
 
 
