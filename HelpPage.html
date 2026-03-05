@@ -6,17 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Q3PROJECT_HelpPage</title>
 
-<!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     margin: 0;
-    min-height: 100vh; /* ensures the body fills the viewport */
+    min-height: 100vh; 
     background-image: url("manilamap.png");
     background-size: cover;
     background-position: center;
@@ -83,17 +81,35 @@ body {
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light navbar-glass">
-    <div class="container-fluid justify-content-center">
-        <div class="d-flex align-items-center gap-4">
-            <a class="nav-link nav-text" href="Home.html">Home Page</a>
-            <a class="nav-link nav-text" href="Fare.html">Fare Estimator</a>
-            <a class="navbar-brand m-0" href="#">
-                <img src="ARROW.png" alt="FareRides Logo" width="120">
-            </a>
-            <a class="nav-link nav-text" href="HelpPage.html">Help</a>
-            <a class="nav-link nav-text" href="AboutUs.html">About Us</a>
+
+    <div class="container">
+        <div class="row w-100 align-items-center text-center">
+            <div class="col d-flex justify-content-end gap-4">
+                <a class="nav-link nav-text" href="Home.html">
+                    Home Page
+                </a>
+                <a class="nav-link nav-text" href="Fare.html">
+                    Fare Estimator
+                </a>
+            </div>
+            <div class="col-auto">
+                <a class="navbar-brand m-0"
+                   href="https://youtu.be/ZUHpUXlsvbI?si=TMxtZTi_FiJkN9ag&t=45">
+                    <img src="ARROW.png" width="120">
+                </a>
+</div>
+            <div class="col d-flex justify-content-start gap-4">
+                <a class="nav-link nav-text" href="HelpPage.html">
+                    Help
+                </a>
+                <a class="nav-link nav-text" href="AboutUs.html">
+                    About Us
+                </a>
+
+            </div>
         </div>
     </div>
+
 </nav>
 
 <div class="box text-center">
@@ -148,10 +164,5 @@ body {
 
     </div>
 </div>
-
-<!-- Bootstrap JS Bundle (required for accordion) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
-
 </html>
